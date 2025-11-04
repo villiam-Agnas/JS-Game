@@ -75,8 +75,8 @@ while (playing !== false) {
     } else if (bet > coins) {
         alert("You don´t have that much money!")
         continue
-    } else if (bet === 0) {
-        alert("You gotta bet something!")
+    } else if (bet <= 0) {
+        alert("Hey!, thats not a real bet!")
         continue
     }
     coins = coins - bet
@@ -112,7 +112,12 @@ while (playing !== false) {
                         coins = coins + reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet)
                         break
                     }
-                    let playAgain = parseInt(prompt(`Your hand: ${playerHand.join(" : ")}\nYou drew a ${playerHand[playerHand.length - 1]} giving you a total of ${playerHandSum}. Do you wish to hit again? if you wish to hit type 1 or if you wish to stand type 2.`))
+                    let playAgainDecide = (prompt(`Your hand: ${playerHand.join(" : ")}\nYou drew a ${playerHand[playerHand.length - 1]} giving you a total of ${playerHandSum}. Do you wish to hit again? if you wish to hit type 1 or if you wish to stand type 2.`))
+                    if (playAgainDecide === null) {
+                        alert("The dealer looks at you and says -This is a pretty strange time to try and end the round but as you wish")
+                        break
+                    }
+                    let playAgain = parseInt(playAgainDecide)
                     if (playAgain === 2) {
                         coins = coins + reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet)
                         break
