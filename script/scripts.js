@@ -57,9 +57,9 @@ function reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet) {
     }
     return bet;
 }
-alert("Welcome to casino JS bigshot. here we specialize in kinda Blackjack. please take a seat at a table and start waisting....i mean earning some money. (highly recommend starting some smooth jazz in the background)")
-alert("we play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
-alert("your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
+alert("Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)")
+alert("We play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
+alert("Your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
 while (playing !== false) {
     deck = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
     let answer = prompt(`How much would you like to bet, you currently have: ${coins} coins.`)
@@ -76,7 +76,7 @@ while (playing !== false) {
         alert("You don´t have that much money!")
         continue
     } else if (bet <= 0) {
-        alert("Hey!, thats not a real bet!")
+        alert("Hey! Thats not a real bet!")
         continue
     }
     coins = coins - bet
