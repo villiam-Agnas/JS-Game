@@ -57,16 +57,21 @@ function reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet) {
     }
     return bet;
 }
-alert("Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)")
+alert("\u{1F0A1} Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)\u{1F0A1}")
 alert("We play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
 alert("Your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
 while (playing !== false) {
     deck = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
+    const numReg = /^\d+$/;
     let answer = prompt(`How much would you like to bet, you currently have: ${coins} coins.`)
     if (answer === null) {
         alert(`You managed to get a total of ${coins} coins.`)
         alert("Thank you for playing!")
         break
+    }
+    if (!numReg.test(answer)) {
+        alert("please place a legitimate bet")
+        continue
     }
     let bet = parseInt(answer)
     if (isNaN(bet)) {
@@ -94,13 +99,12 @@ while (playing !== false) {
         alert(`Oh no! you got a total of ${playerHandSum}. thats means you busted! no money for you!`)
     } else {
         while (true) {
-            let playDecide = (prompt(`Your hand: ${playerHand.join(" : ")}\nYou have been dealt a [${playerHand[0]}] and a [${playerHand[1]}] making it a total of [${playerHandSum}].\nThe dealer is showing a [${dealerHand[0]}].\nIf you wish to hit type 1 or if you wish to stand type 2.`))
+            let playDecide = (prompt(`Your hand: ${playerHand.join(" : ")}\nYou have been dealt a [${playerHand[0]}] and a [${playerHand[1]}] making it a total of [${playerHandSum}].\nThe dealer is showing a [${dealerHand[0]}].\nNow you can either \u2192 Hit \u2190 or \u2192 Stand \u2190.`))
             if (playDecide === null) {
                 alert(`The dealer gives you a strange since seeing you put down ${bet} coins on the table but not wanting to see the showdown is a strange way to play blackjack....`)
                 break
             }
-            let play = parseInt(playDecide)
-            if (play === 1) {
+            if (playDecide.toLowerCase() === "hit") {
                 while (true) {
                     playerHand.push(draw())
                     playerHandSum = sumHand(playerHand)
@@ -112,26 +116,23 @@ while (playing !== false) {
                         coins = coins + reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet)
                         break
                     }
-                    let playAgainDecide = (prompt(`Your hand: ${playerHand.join(" : ")}\nYou drew a ${playerHand[playerHand.length - 1]} giving you a total of ${playerHandSum}. Do you wish to hit again? if you wish to hit type 1 or if you wish to stand type 2.`))
+                    let playAgainDecide = (prompt(`Your hand: ${playerHand.join(" : ")}\nYou drew a ${playerHand[playerHand.length - 1]} giving you a total of ${playerHandSum}. Do you wish to hit again? Type either \u2192 Hit \u2190 or \u2192 Stand \u2190.`))
                     if (playAgainDecide === null) {
                         alert("The dealer looks at you and says -This is a pretty strange time to try and end the round but as you wish")
                         break
                     }
-                    let playAgain = parseInt(playAgainDecide)
-                    if (playAgain === 2) {
+                    if (playAgainDecide.toLowerCase() === "stand") {
                         coins = coins + reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet)
                         break
                     }
                 }
                 break
-            } else if (play === 2) {
+            } else if (playDecide.toLowerCase() === "stand") {
                 coins = coins + reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet)
                 break
-            } else if (isNaN(play)) {
-                alert("please type either 1 or 2!")
-            } else [
-                alert("Please type either 1 or 2!")
-            ]
+            } else {
+                alert("please type either \u2192 hit \u2190 or \u2192 stand \u2190")
+            }
         }
     }
     if (coins <= 0) {
