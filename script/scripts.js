@@ -3,12 +3,14 @@ let coins = 1000
 let deck = []
 let playerHand = []
 let dealerHand = []
+
 function draw() {
     const INDEX = Math.floor(Math.random() * deck.length)
     const CARD = deck[INDEX];
     deck.splice(INDEX, 1)
     return CARD;
 }
+
 function sumHand(handSum) {
     let sum = 0
     let aces = 0
@@ -26,6 +28,7 @@ function sumHand(handSum) {
     }
     return sum
 }
+
 function refreshments() {
     while(true) {
         let drinks = ["negroni", "martini", "manhattan"]
@@ -48,6 +51,7 @@ function refreshments() {
         }
     }
 }
+
 function reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet) {
     alert(`Your hand: ${playerHand.join(" : ")}\nDealer hand: ${dealerHand.join(" : ")}\nThe dealer flips over his second card and it is a ${dealerHand[1]}, with his ${dealerHand[0]} he has a total of ${dealerHandSum}`)
     if (dealerHandSum >= playerHandSum && dealerHandSum <= 21) {
@@ -79,6 +83,7 @@ function reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet) {
     }
     return bet;
 }
+
 alert("\u{1F0A1} Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)\u{1F0A1}")
 alert("We play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
 alert("Your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
