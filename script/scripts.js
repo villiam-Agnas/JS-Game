@@ -60,6 +60,21 @@ function reveal(playerHandSum, dealerHandSum, dealerHand, playerHand, bet) {
 alert("\u{1F0A1} Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)\u{1F0A1}")
 alert("We play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
 alert("Your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
+let drinks = ["negroni", "martini", "manhattan"]
+let drink = prompt("before we start would you like a drink? \nWe can make a fine Negroni, Martini or Manhattan.\nIf you don´t want a drink, you can just hit ok\nOr if you already want to leave the casino just hit cancel")
+if (drink === null) {
+    alert("Ah, we are sad to see you go even before we got to the fun part.\nEven tho leaving the casino is probably the smartest thing you can do in a casino......")
+}
+if (drink.toLowerCase() === drinks[0]) {
+    alert("you get the finest negroni you have ever tasted.")
+} else if (drink.toLowerCase() === drinks[1]) {
+    alert("you get the finest martini you have ever tasted.")
+} else if (drink.toLowerCase() === drinks[2]) {
+    alert("you get the finest manhattan you have ever tasted.")
+} else {
+    alert("As you wish, lets get to the game!")
+}
+
 while (playing !== false) {
     deck = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
     const numReg = /^\d+$/;
