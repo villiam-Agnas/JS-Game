@@ -15,12 +15,16 @@ body {
     justify-content: center;
 }
 
+.instruction {
+    text-align: center;
+}
+
 .backDoor {
   background-image: url(../img/Little-Creek-Casino_Gaming-Floor-Interior-Casino-Design_Casino-Development-1800x1200.jpg);
   background-position: center;
   position:relative;
-  width: 30%;
-  height: 80%;
+  width: 20%;
+  height: 70%;
   margin: 0 auto;
   margin-top: 50px;
 }
