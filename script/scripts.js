@@ -105,7 +105,7 @@ function blackjack() {
         return bet;
     }
 
-    alert("\u{1F0A1} Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money. (Highly recommend starting some smooth jazz in the background)\u{1F0A1}")
+    alert("\u{1F0A1} Welcome to casino JS bigshot. Here we specialize in kinda Blackjack. Please take a seat at a table and start wasting....i mean earning some money.\u{1F0A1}")
     alert("We play a different version of blackjack here, that means there is no splitting\nSince you are such a nice guy we will give you 1000JS coins to start gambling with.")
     alert("Your goal is to leave here with 5000 OR MORE JS COINS!\nIf you manage to do that, You are a true winner.\nBut if your amount of coins ever reach 0.....You will be swiftly kicked out of this fine establishment! GOOD LUCK!")
     refreshments()
